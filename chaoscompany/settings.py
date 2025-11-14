@@ -11,27 +11,28 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-8i0hw4ovr8g!226b=3^b-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
+# ✅ CORREGIDO - DOMINIO ACTUAL
 ALLOWED_HOSTS = [
-    'chaoscompany-django-app-bxa4amamaabubwh6.canadacentral-01.azurewebsites.net',
+    'chaos-bsb8bjf6dkfgfhds.canadacentral-01.azurewebsites.net',  # ← DOMINIO CORRECTO
     'localhost', 
     '127.0.0.1'
 ]
 
 # Application definition
 INSTALLED_APPS = [
-    'whitenoise.runserver_nostatic',  # <-- AGREGAR ESTO
+    'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'accounts',      # App para autenticación y usuarios
-    'main',          # App para contenido principal
-    'games',         # App para catálogo de juegos
-    'subscriptions', # App para planes de suscripción
-    'gaming',        # App para funcionalidades de juego
-    'support',       # App para soporte técnico
+    'accounts',
+    'main',
+    'games',
+    'subscriptions',
+    'gaming',
+    'support',
 ]
 
 # Modelo de usuario personalizado
@@ -44,7 +45,7 @@ LOGOUT_REDIRECT_URL = '/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # <-- AGREGAR ESTO
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -122,7 +123,7 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # WhiteNoise configuration
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  # <-- AGREGAR ESTO
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Configuración de archivos multimedia
 MEDIA_URL = '/media/'
